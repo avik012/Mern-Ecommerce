@@ -19,6 +19,7 @@ import EventIcon from "@mui/icons-material/Event";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";  
 import {  useNavigate } from "react-router-dom";
 import { createOrder, clearErrors } from "../../actions/orderAction";
+import backendLink from "../../constants/backendLink";
 
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -53,13 +54,9 @@ const Payment = () => {
     payBtn.current.disabled = true;
 
     try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
+      const config = {headers: { "Content-Type":"application/json","token":localStorage.getItem("token")}}
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        `${backendLink}/api/v1/payment/process`,
         paymentData,
         config
       );

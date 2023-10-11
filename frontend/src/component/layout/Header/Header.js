@@ -6,6 +6,8 @@ import signUplogo from "../../../images/signlogo.png";
 import Cart from "../../../images/cart.png";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState("")
@@ -28,28 +30,29 @@ const Header = () => {
         </div>
         <div className='uppernav' style={menuOpen ? {display:'block'} : {display:"none"}}>
         <nav className="navbar" role="navigation" aria-label="main navigation">
+            
             <div className='logo'>
-                <a href='/'>
+                <Link to='/'>
                     <img src={logo} alt='Ecommerce logo' />
-                </a>
+                </Link>
             </div>
             <div className='nav-menu'>
-                <a href='/'>Home</a>
-                <a href='/products'>Products</a>
-                <a href='/about'>About</a>
-                <a href='/contact'>Contact</a>
+                <Link to='/'>Home</Link>
+                <Link to='/products'>Products</Link>
+                <Link to='/about'>About</Link>
+                <Link to='/contact'>Contact</Link>
             </div>
 
-            <div className='loginNav'>
-                 <a href='/search' title='Search'>
+            <div className='loginNav'> 
+                 <Link to='/search' title='Search'>
                     <img src={search} alt='Search logo' />
-                </a>
-                <a href='/cart' title='Cart'>
+                </Link>
+                <Link to='/cart' title='Cart'>
                     <img src={Cart} alt='Cart logo' />
-                </a>
-                <a href='/login' title='Login'>
+                </Link>
+                <Link to='/login' title='Login'>
                     <img src={signUplogo} alt='Profile logo' />
-                </a>
+                </Link>
             </div>
   
 </nav>

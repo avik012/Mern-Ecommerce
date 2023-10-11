@@ -40,6 +40,7 @@ import ProductReviews from "./component/Admin/ProductReviews";
 import NotFound from "./component/layout/Not Found/NotFound";
 import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
+import backendLink from "./constants/backendLink";
 
 
 
@@ -51,7 +52,9 @@ function App() {
 
   async function getStripeApiKey() {
     try{
-    const { data } = await axios.get("/api/v1/stripeapikey");
+      
+      const config = {headers: { "Content-Type":"application/json","token":localStorage.getItem("token")}}
+    const { data } = await axios.get(`${backendLink}/api/v1/stripeapikey`,config);
     // console.log("hlo",data)
         setStripeApiKey(data.stripeApiKey);
       }

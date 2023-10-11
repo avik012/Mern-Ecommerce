@@ -1,9 +1,10 @@
 import { ADD_TO_CART, REMOVE_CART_ITEM, SAVE_SHIPPING_INFO } from "../constants/cartConstant";
 import axios from "axios";
+import backendLink from "../constants/backendLink"
 
 export const addItemsToCart = (id,quantity)=> async (dispatch,getState) =>{
     
-    const {data} = await axios.get(`/api/v1/product/${id}`);
+    const {data} = await axios.get(`${backendLink}/api/v1/product/${id}`);
 
         dispatch({ type:ADD_TO_CART,
         payload:{

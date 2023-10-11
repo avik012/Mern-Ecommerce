@@ -64,5 +64,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://mernecommercebackend-627r.onrender.com"  
+  "proxy": "http://192.168.176.23:4000"  
 }
