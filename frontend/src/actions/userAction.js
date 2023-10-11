@@ -73,7 +73,7 @@ export const loadUser = ()=> async(dispatch)=>{
       
       const config = {headers: {"token":localStorage.getItem("token")}}
 
-       const {data}= await axios.get(`/api/v1/me`,config);
+       const {data}= await axios.get(`${backendLink}/api/v1/me`,config);
       dispatch({type:LOAD_USER_SUCCESS,payload:data.user})
   } catch (error) {
       dispatch({type:LOAD_USER_FAIL, payload:error.response.data.message})
