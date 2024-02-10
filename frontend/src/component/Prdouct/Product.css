@@ -90,7 +90,7 @@
   }
   
   .filterBox > fieldset {
-    border: 1px solid rgba(0, 0, 0, 0.329);
+    border: none;
     margin-top: 1vmax;
   }
   
